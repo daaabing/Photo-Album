@@ -1,0 +1,168 @@
+@import url(https://fonts.googleapis.com/css?family=Audiowide);
+
+body {
+    background: #ececec;
+}
+
+.head-text {
+    font-size: 35px;
+    font-family: "Audiowide", sans-serif;
+}
+
+.search-text {
+    font-size: 30px;
+    font-family: "Audiowide", sans-serif;
+}
+
+.submitButton {
+    width: 120px;
+    height: 40px;
+    border: 1px solid #86c8ff;
+    background: #86c8ff;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.voiceButton {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #86c8ff;
+    background: #86c8ff;
+    text-align: center;
+    color: #fff;
+    /* border-radius: 0 5px 5px 0; */
+    border-radius: 5px 0 0 5px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+p {
+    color: #444;
+}
+
+button:focus {
+    outline: 0;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 100px 50px;
+    text-align: center;
+}
+
+.container h1 {
+    margin-bottom: 20px;
+}
+
+.page-description {
+    font-size: 1.1rem;
+    margin: 0 auto;
+}
+
+.tz-link {
+    font-size: 1em;
+    color: #1da7da;
+    text-decoration: none;
+}
+
+.no-browser-support {
+    display: none;
+    font-size: 1.2rem;
+    color: #e64427;
+    margin-top: 35px;
+}
+
+.app {
+    margin: 40px auto;
+}
+
+
+#recording-instructions {
+    margin: 15px auto 60px;
+}
+
+#notes {
+    padding-top: 20px;
+}
+input[type=text] {
+    box-shadow: 0 0 11px rgba(33,33,33,.2); 
+}
+.note .header {
+    font-size: 0.9em;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.note .delete-note,
+.note .listen-note {
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.note .content {
+    margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 50px 25px;
+    }
+
+    button {
+        margin-bottom: 10px;
+    }
+
+}
+
+.img-display img{
+  margin: 5px;
+  /* height: 500px; */
+  width: 200px;
+  border-radius: 5%;
+}
+
+.img-display img:hover{
+    box-shadow: 0 0 11px rgba(33,33,33,.2); 
+}
+
+.img-display{
+  max-height: 500px;
+  max-width: 100%;
+  overflow: scroll;
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+/* -- Demo ads -- */
+
+@media (max-width: 1200px) {
+    #bsaHolder{ display:none;}
+}

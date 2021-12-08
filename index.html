@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="%PUBLIC_URL%/apiGateway-js-sdk/apigClient.js"></script>
+    <script type="text/javascript" src="%PUBLIC_URL%/apiGateway-js-sdk/lib/axios/dist/axios.standalone.js"></script>
+    <script type="text/javascript" src="%PUBLIC_URL%/apiGateway-js-sdk/lib/CryptoJS/rollups/hmac-sha256.js"></script>
+    <script type="text/javascript" src="%PUBLIC_URL%/apiGateway-js-sdk/lib/CryptoJS/rollups/sha256.js"></script>
+    <script type="text/javascript" src="%PUBLIC_URL%/apiGateway-js-sdk/lib/CryptoJS/components/hmac.js"></script>
+    <script type="text/javascript" src="%PUBLIC_URL%/apiGateway-js-sdk/lib/CryptoJS/components/enc-base64.js"></script>
+    <script type="text/javascript" src="%PUBLIC_URL%/apiGateway-js-sdk/lib/url-template/url-template.js"></script>
+    <script type="text/javascript" src="%PUBLIC_URL%/apiGateway-js-sdk/lib/apiGatewayCore/sigV4Client.js"></script>
+    <script type="text/javascript" src="%PUBLIC_URL%/apiGateway-js-sdk/lib/apiGatewayCore/apiGatewayClient.js"></script>
+    <script type="text/javascript" src="%PUBLIC_URL%/apiGateway-js-sdk/lib/apiGatewayCore/simpleHttpClient.js"></script>
+    <script type="text/javascript" src="%PUBLIC_URL%/apiGateway-js-sdk/lib/apiGatewayCore/utils.js"></script>
+    <script type="text/javascript" src="%PUBLIC_URL%/aws-sdk.min.js"></script>
+    <script>
+        let sdk = apigClientFactory.newClient({apiKey: "ruGrf0a6IG6FZQFKW4wN73evJ9x4lJmCaXbEC9uG"});
+    </script>
+    <script src="%PUBLIC_URL%/put-search.js"></script>
+    <title>AI Photo Search</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    
+    <div class="container">
+        <div class="head-text">AI Photo Album</div>
+        <div class="app">
+            <div class="input-group" style="margin-top:20px;">
+              <input type="file" class="form-control" id="file_path" accept="image/*", onchange="previewFile(this);">
+              <div class="input-group-btn">
+                  <button type="submit" class="submitButton" onclick="uploadPhoto()">
+                      Upload
+                  </button>
+              </div>
+            </div>
+            <div class="input-group" style="margin-top:20px;">
+				<div class="input-group-btn" id="record">
+					<button type="submit" class="voiceButton" onclick="searchFromVoiceStart()">
+						<i class="fa fa-microphone"></i>
+				</button>
+				</div>
+				<div class="input-group-btn" id="stop">
+					<button type="submit" class="voiceButton" onclick="searchFromVoiceEnd()">
+					<i class="fa fa-stop"></i>
+					</button>
+				</div>
+                <input id="query_string" type="text" class="form-control" placeholder="Type the key word, such as 'cat'" name="search">
+                <div class="input-group-btn">
+                    <button type="submit" class="submitButton" onclick="searchPhotos()">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+		<div class="search-text">Search Result</div>
+		<div class="img-display"></div>
+    </div>
+	<div id="root"></div>
+  </body>
+</html>
